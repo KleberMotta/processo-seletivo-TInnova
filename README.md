@@ -1,6 +1,6 @@
 # API Restful Express com Postgres DB
 
-A API foi feita utilizando as tecnologias mais recentes utilizadas em microserviços rest. Devida a simmplicidade dos requisitos. a aquitetura não está tão sofisticada quanto poderia ser ou como um projeto pronto para Produção.
+A API foi feita utilizando as tecnologias mais recentes que conheço em Apis Rest, microserviços/webservices de pequeno port. Devido a simplicidade dos requisitos, a aquitetura não está tão sofisticada quanto poderia ser ou como um projeto pronto para Produção.
 
 ## Como subir a API
 
