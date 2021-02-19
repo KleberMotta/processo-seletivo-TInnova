@@ -25,7 +25,7 @@ Abra o projeto utilizando uma IDE Java com, certifique-se de ter pelo menos a ve
 
 > [https://github.com/KleberMotta/processo-seletivo-TInnova/tree/javascript-05](https://github.com/KleberMotta/processo-seletivo-TInnova/tree/javascript-05)
 
-Para facilitar na execução do projeto, utilizei um container Docker já com todas as dependências necessárias, expondo a aplicação Web na porta _(alguma porta)_. Para executar executar o projeto, apenas suba o container, e acesse o endereço _(algum endereço)_ no seu navegador para acessar a SPA. Caso opte por testar as requisições manualmente, deixei um projeto do [Insomnia](https://insomnia.rest/) pronto para testes, [arquivo_de_requisições](link_arquivo_requisições)
+Para mais informações acesse a branch do projeto. Quaisquer problemas, estou a disposição!
 
 ## Contato
 
