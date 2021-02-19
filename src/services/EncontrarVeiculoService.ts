@@ -5,16 +5,13 @@ import VeiculosRepository from '../repositories/VeiculosRepository';
 
 interface Request {
   vendidos: boolean;
-  decadas: { 
-      dataInicio: number,
-      dataFim: number,
-  };
+  decada: number;
   fabricante: string;
   ultimaSemana: boolean;
 }
 
 class EncontrarVeiculoService {
-  public async execute({ vendidos, decadas, fabricante, ultimaSemana }: Request): Promise<Array<Veiculo> | null > {
+  public async execute({ vendidos, decada, fabricante, ultimaSemana }: Request): Promise<Array<Veiculo> | null > {
     const veiculosRepository = getCustomRepository(VeiculosRepository);
     let queryBuilder = "SELECT * FROM VEICULOS WHERE ";
 
@@ -34,9 +31,8 @@ class EncontrarVeiculoService {
     if(vendidos) {
         queryBuilder += "VENDIDO = TRUE AND ";
     } 
-    if (decadas) {
-        const { dataInicio, dataFim } = decadas;
-        queryBuilder += `ANO BETWEEN ${dataInicio} AND ${dataFim} AND `;
+    if (decada) {
+        queryBuilder += `ANO = ${decada} AND `;
     } 
     if (fabricante) {
         queryBuilder += `MARCA = '${fabricante}' AND `;

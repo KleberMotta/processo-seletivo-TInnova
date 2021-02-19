@@ -23,13 +23,15 @@ veiculosRouter.get('/', async (request, response) => {
 veiculosRouter.get('/find', async (request, response) => {
   try {
     const encontrarVeiculoService = new EncontrarVeiculoService();
-    const { 
-      vendidos, 
-      decadas, 
-      fabricante, 
-      ultimaSemana 
-    } = request.body;
-    const veiculos = await encontrarVeiculoService.execute({ vendidos, decadas, fabricante, ultimaSemana });
+    const query = request.query;
+    //const { vendidos as boolean, decada, fabricante, ultimaSemana } = query;
+
+    const vendidos: boolean = query.vendidos as unknown as boolean;
+    const decada: number = query.decada as unknown as number;
+    const fabricante: string = query.fabricante as unknown as string;
+    const ultimaSemana: boolean = query.ultimaSemana as unknown as boolean;
+
+    const veiculos = await encontrarVeiculoService.execute({ vendidos, decada, fabricante, ultimaSemana });
     return response.json(veiculos);
   } catch (err) {
     return response.status(400).json({ error: err.message });
